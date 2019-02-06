@@ -46,9 +46,9 @@ pipeline {
           sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
           sh "jx step tag --version \$(cat VERSION)"
           sh "mvn clean deploy"
-          sh "skaffold version"
-          sh "export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml"
-          sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
+          //sh "skaffold version"
+          //sh "export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml"
+          //sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
         }
       }
     }
@@ -62,10 +62,10 @@ pipeline {
             sh "jx step changelog --version v\$(cat ../../VERSION)"
 
             // release the helm chart
-            sh "jx step helm release"
+            //sh "jx step helm release"
 
             // promote through all 'Auto' promotion Environments
-            sh "jx promote -b --all-auto --timeout 1h --version \$(cat ../../VERSION)"
+            //sh "jx promote -b --all-auto --timeout 1h --version \$(cat ../../VERSION)"
           }
         }
       }
