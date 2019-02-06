@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label "jenkins-maven"
-  }
+  agent any
   environment {
     ORG = 'johnnynmonic'
     APP_NAME = 'jxdummy'
