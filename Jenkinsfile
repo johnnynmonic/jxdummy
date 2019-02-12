@@ -42,6 +42,7 @@ pipeline {
           sh "git checkout master"
           //sh "git config --global credential.helper store"
           sh "jx step git credentials"
+          sh "cat /home/jenkins/git/credentials"
 
           // so we can retrieve the version in later steps
           sh "echo \$(jx-release-version) > VERSION"
