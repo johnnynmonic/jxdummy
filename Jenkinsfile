@@ -3,7 +3,7 @@ pipeline {
   environment {
     ORG = 'johnnynmonic'
     APP_NAME = 'jxdummy'
-    CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
+    //CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
   stages {
     stage('CI Build and push snapshot') {
